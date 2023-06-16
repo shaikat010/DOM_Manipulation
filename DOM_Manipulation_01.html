@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #message {
+      font-size: 18px;
+      color: green;
+      margin-top: 10px;
+    }
+
+    #header{
+        font-size: large;
+    }
+  </style>
+</head>
+<body>
+    <div id = "header"><h1>This is the Header</h1> </div>
+  <button id="myButton">Click Me</button>
+  <button id = "myButton2">Click Me and I tell your Name!</button>
+  <div id="message"></div>
+
+
+  <form id="myForm">
+    <input type="text" id="inputField" placeholder="Enter your message">
+    <button type="submit">Submit</button>
+  </form>
+
+  <div id="message02"></div>
+
+  <script>
+    const button = document.getElementById('myButton');
+    const button02 = document.getElementById('myButton2');
+
+
+    const form = document.getElementById('myForm');
+    const inputField = document.getElementById('inputField');
+    const messageDiv02 = document.getElementById('message02');
+
+    const messageDiv = document.getElementById('message');
+    const head = document.getElementById('header')
+
+
+    button.addEventListener('click', function() {
+      messageDiv.textContent = 'Button clicked by You Mr.Shaikat!';
+      head.textContent =  'Header Changed!'
+    });
+
+    button02.addEventListener('click',function(){
+        messageDiv.textContent = "The other button has been clicked!"
+    })
+
+
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent form submission
+
+      const userInput = inputField.value;
+      messageDiv.textContent = userInput;
+
+      inputField.value = ''; // Clear input field
+    });
+
+    
+  </script>
+</body>
+</html>
